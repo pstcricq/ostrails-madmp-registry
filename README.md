@@ -11,9 +11,10 @@ the rendered JSON into this repository. Nobody needs a GitHub account to appear 
 ```
 projects/
   <slug>/
-    dmp.json          the project DMP (may still contain {snake_case} placeholders)
-    .meta.json        identity and status of the project (written by the bot)
-    productions/      deployment DMPs, placeholders resolved
+    template/
+      dmp_project_template.json   the project DMP, may still contain {snake_case} placeholders
+    productions/                  deployment DMPs, placeholders resolved
+    .meta.json                    identity and status of the project, written by the bot
 registry/
   index.json          generated: the list of known projects, consumed by DSW
 ```
@@ -54,9 +55,12 @@ in `.meta.json` and `registry/index.json`:
 - `fail` — invalid JSON, missing required field, cardinality or cross-field rule broken
 
 A failing DMP is still committed: the artifact is kept so it can be inspected and
-fixed. What a failure blocks is downstream use — a project whose `dmp.json` is
+fixed. What a failure blocks is downstream use — a project whose template is
 `fail` cannot be used to generate deployment DMPs in `productions/`. It never
 blocks data acquisition.
+
+`projects/glider-test/` is a fixture used to exercise the pipeline; it is marked
+`"fixture": true` in its `.meta.json` and is excluded from `registry/index.json`.
 
 Rules and knowledge model live in
 [madmp-core](https://github.com/Pierrott64/madmp-core).
