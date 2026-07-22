@@ -1,0 +1,14 @@
+{
+  "dmp": {
+    "title": "Glider mission DMP (webhook E2E test)",
+    "dmp_id": {
+      "identifier": "https://raw.githubusercontent.com/Pierrott64/dmp-registry/main/projects/glider/template/dmp_glider_template.json",
+      "type": "url"
+    },
+    "dataset": [
+      {
+        "title": "CTD"
+      }
+    ]
+  }
+}
