@@ -1,0 +1,10 @@
+folder: glider
+id: socib-glider
+name: SOCIB Glider
+rules:
+- rda_dcs: 1.0.0
+- ostrails: 1.0.0
+- socib: 1.0.0
+qc:
+  status: null
+  checked_at: null
