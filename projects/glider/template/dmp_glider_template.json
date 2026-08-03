@@ -1,18 +1,38 @@
 {
   "dmp": {
-    "created": "2026-07-29T11:52:30.513231Z",
+    "created": "2026-08-03T08:19:07.993954Z",
     "ethical_issues_exist": "",
     "language": "",
-    "modified": "2026-07-29T11:52:30.694218Z",
+    "modified": "2026-08-03T08:19:07.993954Z",
     "title": "",
     "contact": {
       "mbox": "",
-      "name": ""
+      "name": "",
+      "affiliation": [
+        {
+          "affiliation_id": {
+            "identifier": "",
+            "type": "ror"
+          },
+          "name": ""
+        }
+      ]
     },
     "dmp_id": {
       "identifier": "https://raw.githubusercontent.com/Pierrott64/dmp-registry/main/projects/glider/template/dmp_glider_template.json",
       "type": "url"
     },
+    "contributor": [
+      {
+        "name": "",
+        "contributor_id": [
+          {
+            "identifier": "",
+            "type": ""
+          }
+        ]
+      }
+    ],
     "dataset": [
       {
         "dataset_id": {
@@ -154,7 +174,7 @@
               "raw"
             ],
             "type_output": [
-              "L1"
+              ""
             ]
           },
           {
