@@ -47,7 +47,9 @@ that touched no config leaves no commit here.
 
 It never deletes, and it never overwrites a folder that carries a different
 project `id` — it refuses instead, because that folder is where somebody else's
-DMPs land.
+DMPs land. It refuses the same way when a `meta.yaml` is there and does not
+parse: rewriting it would drop the pins below and any key another writer owns,
+so that one is fixed by hand.
 
 ## `meta.yaml`
 
@@ -66,7 +68,19 @@ rules:
 - **`rules`** — the rules versions this project's DMP was built from, frozen at
   registration. A config's pins move; these do not. Nothing reads them yet, and
   they are written anyway: after the fact, nobody could say what was pinned when
-  a given DMP was submitted.
+  a given DMP was submitted. The rendered DMP carries no trace of them, so this
+  file is the only place they exist.
+
+  **The freeze is per project, and this file is rewritten when a config's pins
+  move.** Its current state therefore says what the *next* submission will be
+  built from. What a DMP already committed here was built from is the state of
+  this file **at that DMP's commit** — both live in this repository, so the two
+  are read together:
+
+  ```bash
+  git log -1 --format=%H -- projects/<id>/template/dmp_<id>_template.json
+  git show <that-commit>:projects/<id>/meta.yaml
+  ```
 
 **This file may have more than one writer, and each owns its own keys.**
 madmp-core writes `id` and `rules`, compares only those, and carries every other
@@ -112,6 +126,11 @@ There is **no quality control running in this repository today**. When it is
 built, it will read the `rules` pins of a project's `meta.yaml` and check the
 submitted DMP against the very rules it was built with, then record a verdict
 under a key of its own here.
+
+It has to read those pins **as of the commit of the DMP it is checking**, not
+as the file stands today — see `meta.yaml` above. Reading the current state
+would check an older DMP against rules it was never built with, and would do so
+silently, since both are valid documents.
 
 Two things are already in place for it, and are the reason it can be added
 without changing anything above: the pins are frozen at registration, and
