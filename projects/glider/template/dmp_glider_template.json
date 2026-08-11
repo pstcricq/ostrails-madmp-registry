@@ -1,0 +1,17 @@
+{
+  "dmp": {
+    "created": "2026-08-11T15:05:51.983614Z",
+    "ethical_issues_exist": "",
+    "language": "",
+    "modified": "2026-08-11T15:05:51.983614Z",
+    "title": "",
+    "contact": {
+      "mbox": "",
+      "name": ""
+    },
+    "dmp_id": {
+      "identifier": "https://raw.githubusercontent.com/Pierrott64/dmp-registry/main/projects/glider/template/dmp_glider_template.json",
+      "type": "url"
+    }
+  }
+}
