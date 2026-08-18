@@ -135,10 +135,11 @@ will be committed when whatever produces them is built.
 
 ## Quality control
 
-`.github/workflows/qc.yml` runs on every push and every pull request, and a
-submission arrives as a pull request, so it is the gate. It finds the DMPs this
-repository holds rather than naming them, one check per document, and calls the
-reusable workflow madmp-core publishes:
+`.github/workflows/quality-control.yml` runs on every push and every pull
+request, and a
+submission arrives as a pull request, so it is the gate. It finds the DMPs
+this repository holds rather than naming them, one check per document, and
+calls the reusable workflow madmp-core publishes:
 
 ```yaml
 uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.2
@@ -153,7 +154,7 @@ Each DMP is checked against the `rules` of the `.meta.json` beside it, so a
 document is judged by what it was written against and never by what a config
 pins today. A check fails when the document has at least one real violation. An
 optional field left empty is not one, and a value outside a recommended
-vocabulary is a warning. The report is uploaded as a `qc-report` artifact, pass
+vocabulary is a warning. The report is uploaded as a `quality-control-report` artifact, pass
 or fail alike, a failing DMP being when it matters most.
 
 **A green pull request from `submission/` is merged by the workflow itself.**
@@ -169,6 +170,10 @@ which updates that same pull request, and the check runs anew.
 would turn a DMP red for a change made there, long after the document was
 written, and nobody could fix it from this repository. Bumping that tag is a
 deliberate act, and the run that follows it says which documents no longer pass.
+
+That is also why the path above is still `qc-dmp.yml`: the file has been
+renamed since, and at `v0.1.2` it is there under the name it had then. The new
+path arrives with the tag that carries it.
 
 `MADMP_CORE_TOKEN` is a repository secret, a fine-grained token with
 `Contents: Read` on madmp-core. It is needed only while madmp-core is private: a

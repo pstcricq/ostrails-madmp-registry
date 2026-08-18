@@ -10,7 +10,7 @@
 # The version of madmp-core is pinned. Following its default branch would
 # turn a DMP red for a change made there, long after the document was
 # written, and nobody could fix it from this repository.
-name: QC
+name: Quality control
 
 on:
   push:
@@ -62,6 +62,9 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
     name: quality-control (${{ matrix.project }})
+    # Still the old file name, and deliberately: this is fetched at v0.1.2,
+    # where the file is there under the name it had then. Renaming it here
+    # before the tag that carries the new name would break every submission.
     uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.2
     with:
       dmp_path: ${{ matrix.dmp }}
