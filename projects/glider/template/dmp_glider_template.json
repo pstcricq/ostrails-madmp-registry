@@ -1,19 +1,13 @@
 {
   "dmp": {
-    "created": "2026-08-11T15:05:51.983614Z",
+    "created": "2026-08-18T09:20:57.107268Z",
     "ethical_issues_exist": "",
     "language": "",
-    "modified": "2026-08-13T08:27:45.740789Z",
+    "modified": "2026-08-18T09:20:57.107268Z",
     "title": "",
     "contact": {
       "mbox": "",
-      "name": "",
-      "contact_id": [
-        {
-          "identifier": "",
-          "type": ""
-        }
-      ]
+      "name": ""
     },
     "dmp_id": {
       "identifier": "https://raw.githubusercontent.com/pstcricq/ostrails-madmp-registry/main/projects/glider/template/dmp_glider_template.json",
