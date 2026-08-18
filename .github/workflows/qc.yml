@@ -1,0 +1,72 @@
+# Quality control of every DMP this registry holds.
+#
+# The check itself lives in madmp-core, which owns the rules and the engine.
+# This file only says which documents to run it on, and it finds them rather
+# than naming them: a project's folder is laid out by madmp-core and its DMP
+# is written by the submission webhook, so nobody edits this file when a
+# project arrives. Naming them here would mean a new project is silently not
+# checked, which is worse than not checking at all.
+#
+# The version of madmp-core is pinned. Following its default branch would
+# turn a DMP red for a change made there, long after the document was
+# written, and nobody could fix it from this repository.
+name: QC
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Which documents are here, as a matrix the check below fans out over. A
+  # DMP is `dmp_<project>_template.json`, and the versions it was built from
+  # sit beside it under the same name with `.meta.json`, both written by the
+  # same commit.
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.find.outputs.matrix }}
+      found: ${{ steps.find.outputs.found }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: find
+        run: |
+          matrix=$(find projects -name 'dmp_*_template.json' | sort | python3 -c "
+          import json, sys
+          include = [
+              {
+                  'project': path.split('/')[1],
+                  'dmp': path,
+                  'pins': path[: -len('.json')] + '.meta.json',
+              }
+              for path in (line.strip() for line in sys.stdin)
+              if path
+          ]
+          print(json.dumps({'include': include}))
+          ")
+          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+          echo "found=$(echo "$matrix" | python3 -c 'import json,sys; print(len(json.load(sys.stdin)["include"]))')" >> "$GITHUB_OUTPUT"
+          echo "$matrix"
+
+  # One check per document, each naming its project in the check list, so a
+  # red one says which. An empty registry skips this rather than failing on a
+  # matrix with no values.
+  quality-control:
+    needs: discover
+    if: needs.discover.outputs.found != '0'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
+    name: quality-control (${{ matrix.project }})
+    uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.0
+    with:
+      dmp_path: ${{ matrix.dmp }}
+      pins_path: ${{ matrix.pins }}
+    secrets:
+      # madmp-core is private, and a called workflow runs with this
+      # repository's own token, which cannot read it.
+      madmp_core_token: ${{ secrets.MADMP_CORE_TOKEN }}
