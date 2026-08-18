@@ -1,13 +1,13 @@
 {
   "dmp": {
     "created": "2026-08-18T09:20:57.107268Z",
-    "ethical_issues_exist": "",
-    "language": "",
-    "modified": "2026-08-18T09:20:57.107268Z",
-    "title": "",
+    "ethical_issues_exist": "no",
+    "language": "eng",
+    "modified": "2026-08-18T10:37:40.351628Z",
+    "title": "Glider mission 2026, bout en bout",
     "contact": {
-      "mbox": "",
-      "name": ""
+      "mbox": "albert.einstein@socib.es",
+      "name": "Albert Einstein"
     },
     "dmp_id": {
       "identifier": "https://raw.githubusercontent.com/pstcricq/ostrails-madmp-registry/main/projects/glider/template/dmp_glider_template.json",
