@@ -62,7 +62,7 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
     name: quality-control (${{ matrix.project }})
-    uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.0
+    uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.2
     with:
       dmp_path: ${{ matrix.dmp }}
       pins_path: ${{ matrix.pins }}

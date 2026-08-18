@@ -128,7 +128,7 @@ the DMPs this repository holds rather than naming them, one check per document,
 and calls the reusable workflow madmp-core publishes:
 
 ```yaml
-uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.0
+uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.2
 ```
 
 Finding them rather than listing them is deliberate: a project's folder is laid
