@@ -100,15 +100,27 @@ The webhook is stateless and does exactly this:
    being one nobody registered. The folder has to be laid out first.
 4. Rewrites the document's `dmp_id`, a DSW project URL placeholder at that
    point, to the file's stable raw URL in this repository.
-5. Commits **both files in one commit**, through the Git Data API: a tree, a
+5. Writes **both files in one commit**, through the Git Data API: a tree, a
    commit, and one move of the branch reference. Two writes would leave a DMP
    whose versions are missing whenever the second failed, and the webhook holds
    no state to repair that with.
+6. Offers that commit on `submission/<id>`, under a pull request.
 
-It is idempotent: an unchanged submission commits nothing, and both files are
-compared. **It creates nothing**, no repositories, no folders, no scaffolding.
-Laying out a folder belongs to madmp-core, which knows the config, the webhook
-only knows the folder name it was handed.
+**A submission is offered, not merged.** Nothing lands on `main` until quality
+control has passed on it, which is what makes the default branch of this
+repository readable as "the DMPs that hold up". The `dmp_id` written in step 4
+points at `main`, so it is a promise, kept when the pull request is merged.
+
+**One branch and one pull request per project, not per submission.** A
+researcher who submits five times has one place to look, and the fifth replaces
+the fourth. A submission continues the review that is open, and starts again
+from `main` when there is none, which is also what it is compared with. So a
+resubmission of what is already offered commits nothing, and one of what is
+already merged offers nothing.
+
+**It creates nothing**, no repositories, no folders, no scaffolding. Laying out
+a folder belongs to madmp-core, which knows the config, the webhook only knows
+the folder name it was handed.
 
 The folder is the *only* routing input. Which project a submission belongs to is
 decided by the `?project=` parameter baked into the DSW service, and the
@@ -123,9 +135,10 @@ will be committed when whatever produces them is built.
 
 ## Quality control
 
-`.github/workflows/qc.yml` runs on every push and every pull request. It finds
-the DMPs this repository holds rather than naming them, one check per document,
-and calls the reusable workflow madmp-core publishes:
+`.github/workflows/qc.yml` runs on every push and every pull request, and a
+submission arrives as a pull request, so it is the gate. It finds the DMPs this
+repository holds rather than naming them, one check per document, and calls the
+reusable workflow madmp-core publishes:
 
 ```yaml
 uses: pstcricq/ostrails-madmp-core/.github/workflows/qc-dmp.yml@v0.1.2
@@ -142,6 +155,15 @@ pins today. A check fails when the document has at least one real violation. An
 optional field left empty is not one, and a value outside a recommended
 vocabulary is a warning. The report is uploaded as a `qc-report` artifact, pass
 or fail alike, a failing DMP being when it matters most.
+
+**A green pull request from `submission/` is merged by the workflow itself.**
+There is no branch protection on this repository, so the gate is a job and not
+a repository rule: what it protects against is a red submission landing, not a
+human pushing to `main`. The webhook is the only writer here, and it writes
+only through a pull request.
+
+A red one stays open. The researcher fixes the DMP in DSW and submits again,
+which updates that same pull request, and the check runs anew.
 
 **The version of madmp-core is pinned to a tag.** Following its default branch
 would turn a DMP red for a change made there, long after the document was

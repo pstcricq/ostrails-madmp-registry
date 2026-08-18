@@ -70,3 +70,36 @@ jobs:
       # madmp-core is private, and a called workflow runs with this
       # repository's own token, which cannot read it.
       madmp_core_token: ${{ secrets.MADMP_CORE_TOKEN }}
+
+  # A submission that passes is merged here, by a job, because there is no
+  # branch protection on this repository: private, on a plan that does not
+  # offer it. What that costs is named rather than hidden. A rule would stop
+  # anyone pushing to `main`, this only stops a red submission landing, and
+  # that is the risk actually worth covering, the webhook being the only
+  # writer here and writing only through a pull request.
+  #
+  # It waits on every check and not only the submitted project's, because a
+  # red DMP on `main` is a state this gate exists to make impossible. The day
+  # one is there anyway, no submission merges until it is dealt with, which is
+  # the right way round.
+  #
+  # Squashed: one submission, one commit on `main`, whatever the review took.
+  merge:
+    needs: quality-control
+    if: >-
+      github.event_name == 'pull_request'
+      && startsWith(github.head_ref, 'submission/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      # `needs` already means the check passed, a failed one never reaches
+      # here. The condition above is about which pull requests this job may
+      # merge at all, and it is the whole of that answer: a branch this
+      # repository's own webhook opened, and nothing else.
+      - name: Merge the submission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: gh pr merge "$PR" --squash --delete-branch --repo "$GITHUB_REPOSITORY"
