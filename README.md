@@ -11,6 +11,9 @@ the data arrives.
 their DMP in DSW (Data Stewardship Wizard) and click Submit. Nobody needs a
 GitHub account to appear here.
 
+**What each file holds, field by field, is in the technical reference:**
+<https://pstcricq.github.io/ostrails-madmp-technical-docs/registry/01-layout/>
+
 ## Layout
 
 ```
@@ -120,5 +123,10 @@ will be committed when whatever produces them is built.
 All of it in [madmp-core](https://github.com/pstcricq/ostrails-madmp-core):
 the rules, the knowledge model, the generators, the quality control engine, the
 script that lays out a project's folder here, and the submission webhook that
-commits into it. Why any of it is the way it is, is in that repository's
-`doc.md`, section 10.
+commits into it. It runs inside
+[madmp-dsw](https://github.com/pstcricq/ostrails-madmp-dsw), the deployment.
+
+Two programs write here, each with its own token, its own trigger and its own
+strictly bounded reach. Which one writes which file, and what neither of them
+can do, is in the technical reference:
+<https://pstcricq.github.io/ostrails-madmp-technical-docs/registry/03-writers/>
