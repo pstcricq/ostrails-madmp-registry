@@ -130,3 +130,14 @@ Two programs write here, each with its own token, its own trigger and its own
 strictly bounded reach. Which one writes which file, and what neither of them
 can do, is in the technical reference:
 <https://pstcricq.github.io/ostrails-madmp-technical-docs/registry/03-writers/>
+
+## License
+
+**CC BY 4.0**, Copyright 2026 Pierre St-Cricq dit Lompre (SOCIB), as part of
+the OSTrails project. See [LICENSE](LICENSE).
+
+The plans here are data, not code, and they are meant to be read, aggregated
+and re-judged by other infrastructures. Reuse them, including commercially, as
+long as you credit them. The programs that write them are licensed separately,
+under Apache-2.0, in
+[madmp-core](https://github.com/pstcricq/ostrails-madmp-core).
