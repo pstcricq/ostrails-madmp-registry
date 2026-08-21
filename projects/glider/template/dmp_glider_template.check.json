@@ -1,0 +1,874 @@
+{
+  "dmp": "projects/glider/template/dmp_glider_template.json",
+  "standards": [
+    "rda_dcs",
+    "ostrails"
+  ],
+  "rules_versions": {
+    "rda_dcs": "1.0.0",
+    "ostrails": "1.0.0"
+  },
+  "verdict": "pass",
+  "engine": "1.0.0",
+  "summary": {
+    "total": 106,
+    "fail": 0,
+    "warning": 0,
+    "missing": 30,
+    "pass": 76
+  },
+  "fail": [],
+  "warning": [],
+  "missing": [
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.alternate_identifier[]",
+      "instance_path": "dmp.alternate_identifier",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.alternate_identifier' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.contact.affiliation[]",
+      "instance_path": "dmp.contact.affiliation",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.contact.affiliation' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.contributor[]",
+      "instance_path": "dmp.contributor",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.contributor' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.cost[]",
+      "instance_path": "dmp.cost",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.cost' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].alternate_identifier[]",
+      "instance_path": "dmp.dataset[0].alternate_identifier",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].alternate_identifier' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].creator[]",
+      "instance_path": "dmp.dataset[0].creator",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].creator' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].data_quality_assurance[]",
+      "instance_path": "dmp.dataset[0].data_quality_assurance",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].data_quality_assurance' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].distribution[]",
+      "instance_path": "dmp.dataset[0].distribution",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].distribution' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].is_reused",
+      "instance_path": "dmp.dataset[0].is_reused",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].is_reused' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].issued",
+      "instance_path": "dmp.dataset[0].issued",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].issued' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].keyword[]",
+      "instance_path": "dmp.dataset[0].keyword",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].keyword' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].language",
+      "instance_path": "dmp.dataset[0].language",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].language' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].metadata[]",
+      "instance_path": "dmp.dataset[0].metadata",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].metadata' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].preservation_statement",
+      "instance_path": "dmp.dataset[0].preservation_statement",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].preservation_statement' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].rights",
+      "instance_path": "dmp.dataset[0].rights",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].rights' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].related_identifier[]",
+      "instance_path": "dmp.dataset[0].related_identifier",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].related_identifier' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].security_and_privacy[]",
+      "instance_path": "dmp.dataset[0].security_and_privacy",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].security_and_privacy' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].technical_resource[]",
+      "instance_path": "dmp.dataset[0].technical_resource",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].technical_resource' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].type",
+      "instance_path": "dmp.dataset[0].type",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.dataset[0].type' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].documentation",
+      "instance_path": "dmp.dataset[0].documentation",
+      "standard": "ostrails",
+      "message": "Optional field 'dmp.dataset[0].documentation' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].methodology",
+      "instance_path": "dmp.dataset[0].methodology",
+      "standard": "ostrails",
+      "message": "Optional field 'dmp.dataset[0].methodology' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].naming_convention",
+      "instance_path": "dmp.dataset[0].naming_convention",
+      "standard": "ostrails",
+      "message": "Optional field 'dmp.dataset[0].naming_convention' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.dataset[].target_audience",
+      "instance_path": "dmp.dataset[0].target_audience",
+      "standard": "ostrails",
+      "message": "Optional field 'dmp.dataset[0].target_audience' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.ethical_issues_description",
+      "instance_path": "dmp.ethical_issues_description",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.ethical_issues_description' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.ethical_issues_report",
+      "instance_path": "dmp.ethical_issues_report",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.ethical_issues_report' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.project[]",
+      "instance_path": "dmp.project",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.project' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.related_identifier[]",
+      "instance_path": "dmp.related_identifier",
+      "standard": "rda_dcs",
+      "message": "Optional field 'dmp.related_identifier' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.data_access",
+      "instance_path": "dmp.data_access",
+      "standard": "ostrails",
+      "message": "Optional field 'dmp.data_access' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.license",
+      "instance_path": "dmp.license",
+      "standard": "ostrails",
+      "message": "Optional field 'dmp.license' is absent."
+    },
+    {
+      "category": "presence",
+      "status": "missing",
+      "rule_path": "dmp.rights",
+      "instance_path": "dmp.rights",
+      "standard": "ostrails",
+      "message": "Optional field 'dmp.rights' is absent."
+    }
+  ],
+  "pass": [
+    {
+      "category": "structure",
+      "status": "pass",
+      "rule_path": "dmp",
+      "instance_path": "dmp",
+      "standard": "rda_dcs",
+      "message": "Top-level 'dmp' object found."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.contact",
+      "instance_path": "dmp.contact",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.contact",
+      "instance_path": "dmp.contact",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact' is an object, as expected."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[]",
+      "instance_path": "dmp.contact.contact_id",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[]",
+      "instance_path": "dmp.contact.contact_id",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id' is a list of 1, as expected."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[]",
+      "instance_path": "dmp.contact.contact_id[0]",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0]' is an object, as expected."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[].identifier",
+      "instance_path": "dmp.contact.contact_id[0].identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0].identifier' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[].identifier",
+      "instance_path": "dmp.contact.contact_id[0].identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0].identifier' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[].identifier",
+      "instance_path": "dmp.contact.contact_id[0].identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0].identifier' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[].type",
+      "instance_path": "dmp.contact.contact_id[0].type",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0].type' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[].type",
+      "instance_path": "dmp.contact.contact_id[0].type",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0].type' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[].type",
+      "instance_path": "dmp.contact.contact_id[0].type",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0].type' is a valid string."
+    },
+    {
+      "category": "suggested_values",
+      "status": "pass",
+      "rule_path": "dmp.contact.contact_id[].type",
+      "instance_path": "dmp.contact.contact_id[0].type",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.contact_id[0].type' = 'orcid' matches the suggested values."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.contact.mbox",
+      "instance_path": "dmp.contact.mbox",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.mbox' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.contact.mbox",
+      "instance_path": "dmp.contact.mbox",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.mbox' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.contact.mbox",
+      "instance_path": "dmp.contact.mbox",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.mbox' is a valid email."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.contact.name",
+      "instance_path": "dmp.contact.name",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.name' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.contact.name",
+      "instance_path": "dmp.contact.name",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.name' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.contact.name",
+      "instance_path": "dmp.contact.name",
+      "standard": "rda_dcs",
+      "message": "'dmp.contact.name' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.created",
+      "instance_path": "dmp.created",
+      "standard": "rda_dcs",
+      "message": "'dmp.created' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.created",
+      "instance_path": "dmp.created",
+      "standard": "rda_dcs",
+      "message": "'dmp.created' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.created",
+      "instance_path": "dmp.created",
+      "standard": "rda_dcs",
+      "message": "'dmp.created' is a valid datetime."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[]",
+      "instance_path": "dmp.dataset",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[]",
+      "instance_path": "dmp.dataset",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset' is a list of 1, as expected."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[]",
+      "instance_path": "dmp.dataset[0]",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0]' is an object, as expected."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id",
+      "instance_path": "dmp.dataset[0].dataset_id",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id",
+      "instance_path": "dmp.dataset[0].dataset_id",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id' is an object, as expected."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id.identifier",
+      "instance_path": "dmp.dataset[0].dataset_id.identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id.identifier' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id.identifier",
+      "instance_path": "dmp.dataset[0].dataset_id.identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id.identifier' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id.identifier",
+      "instance_path": "dmp.dataset[0].dataset_id.identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id.identifier' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id.type",
+      "instance_path": "dmp.dataset[0].dataset_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id.type' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id.type",
+      "instance_path": "dmp.dataset[0].dataset_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id.type' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id.type",
+      "instance_path": "dmp.dataset[0].dataset_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id.type' is a valid string."
+    },
+    {
+      "category": "suggested_values",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].dataset_id.type",
+      "instance_path": "dmp.dataset[0].dataset_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].dataset_id.type' = 'doi' matches the suggested values."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].description",
+      "instance_path": "dmp.dataset[0].description",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].description' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].description",
+      "instance_path": "dmp.dataset[0].description",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].description' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].description",
+      "instance_path": "dmp.dataset[0].description",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].description' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].personal_data",
+      "instance_path": "dmp.dataset[0].personal_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].personal_data' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].personal_data",
+      "instance_path": "dmp.dataset[0].personal_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].personal_data' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].personal_data",
+      "instance_path": "dmp.dataset[0].personal_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].personal_data' is a valid string."
+    },
+    {
+      "category": "allowed_values",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].personal_data",
+      "instance_path": "dmp.dataset[0].personal_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].personal_data' = 'no' is an allowed value."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].sensitive_data",
+      "instance_path": "dmp.dataset[0].sensitive_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].sensitive_data' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].sensitive_data",
+      "instance_path": "dmp.dataset[0].sensitive_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].sensitive_data' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].sensitive_data",
+      "instance_path": "dmp.dataset[0].sensitive_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].sensitive_data' is a valid string."
+    },
+    {
+      "category": "allowed_values",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].sensitive_data",
+      "instance_path": "dmp.dataset[0].sensitive_data",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].sensitive_data' = 'no' is an allowed value."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].title",
+      "instance_path": "dmp.dataset[0].title",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].title' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].title",
+      "instance_path": "dmp.dataset[0].title",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].title' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dataset[].title",
+      "instance_path": "dmp.dataset[0].title",
+      "standard": "rda_dcs",
+      "message": "'dmp.dataset[0].title' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.description",
+      "instance_path": "dmp.description",
+      "standard": "rda_dcs",
+      "message": "'dmp.description' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.description",
+      "instance_path": "dmp.description",
+      "standard": "rda_dcs",
+      "message": "'dmp.description' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.description",
+      "instance_path": "dmp.description",
+      "standard": "rda_dcs",
+      "message": "'dmp.description' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id",
+      "instance_path": "dmp.dmp_id",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id",
+      "instance_path": "dmp.dmp_id",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id' is an object, as expected."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id.identifier",
+      "instance_path": "dmp.dmp_id.identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id.identifier' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id.identifier",
+      "instance_path": "dmp.dmp_id.identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id.identifier' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id.identifier",
+      "instance_path": "dmp.dmp_id.identifier",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id.identifier' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id.type",
+      "instance_path": "dmp.dmp_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id.type' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id.type",
+      "instance_path": "dmp.dmp_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id.type' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id.type",
+      "instance_path": "dmp.dmp_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id.type' is a valid string."
+    },
+    {
+      "category": "suggested_values",
+      "status": "pass",
+      "rule_path": "dmp.dmp_id.type",
+      "instance_path": "dmp.dmp_id.type",
+      "standard": "rda_dcs",
+      "message": "'dmp.dmp_id.type' = 'url' matches the suggested values."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.ethical_issues_exist",
+      "instance_path": "dmp.ethical_issues_exist",
+      "standard": "rda_dcs",
+      "message": "'dmp.ethical_issues_exist' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.ethical_issues_exist",
+      "instance_path": "dmp.ethical_issues_exist",
+      "standard": "rda_dcs",
+      "message": "'dmp.ethical_issues_exist' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.ethical_issues_exist",
+      "instance_path": "dmp.ethical_issues_exist",
+      "standard": "rda_dcs",
+      "message": "'dmp.ethical_issues_exist' is a valid string."
+    },
+    {
+      "category": "allowed_values",
+      "status": "pass",
+      "rule_path": "dmp.ethical_issues_exist",
+      "instance_path": "dmp.ethical_issues_exist",
+      "standard": "rda_dcs",
+      "message": "'dmp.ethical_issues_exist' = 'no' is an allowed value."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.language",
+      "instance_path": "dmp.language",
+      "standard": "rda_dcs",
+      "message": "'dmp.language' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.language",
+      "instance_path": "dmp.language",
+      "standard": "rda_dcs",
+      "message": "'dmp.language' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.language",
+      "instance_path": "dmp.language",
+      "standard": "rda_dcs",
+      "message": "'dmp.language' is a valid language."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.modified",
+      "instance_path": "dmp.modified",
+      "standard": "rda_dcs",
+      "message": "'dmp.modified' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.modified",
+      "instance_path": "dmp.modified",
+      "standard": "rda_dcs",
+      "message": "'dmp.modified' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.modified",
+      "instance_path": "dmp.modified",
+      "standard": "rda_dcs",
+      "message": "'dmp.modified' is a valid datetime."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.title",
+      "instance_path": "dmp.title",
+      "standard": "rda_dcs",
+      "message": "'dmp.title' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.title",
+      "instance_path": "dmp.title",
+      "standard": "rda_dcs",
+      "message": "'dmp.title' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.title",
+      "instance_path": "dmp.title",
+      "standard": "rda_dcs",
+      "message": "'dmp.title' is a valid string."
+    },
+    {
+      "category": "presence",
+      "status": "pass",
+      "rule_path": "dmp.version",
+      "instance_path": "dmp.version",
+      "standard": "ostrails",
+      "message": "'dmp.version' is present."
+    },
+    {
+      "category": "shape",
+      "status": "pass",
+      "rule_path": "dmp.version",
+      "instance_path": "dmp.version",
+      "standard": "ostrails",
+      "message": "'dmp.version' is a single value, as expected."
+    },
+    {
+      "category": "type",
+      "status": "pass",
+      "rule_path": "dmp.version",
+      "instance_path": "dmp.version",
+      "standard": "ostrails",
+      "message": "'dmp.version' is a valid string."
+    }
+  ]
+}

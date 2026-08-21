@@ -1,0 +1,12 @@
+{
+  "project": "glider",
+  "template_version": "1.0.0",
+  "rules": [
+    {
+      "rda_dcs": "1.0.0"
+    },
+    {
+      "ostrails": "1.0.0"
+    }
+  ]
+}
