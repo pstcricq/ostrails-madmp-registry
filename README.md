@@ -81,11 +81,16 @@ The verdict the DMP got against the versions its `meta.json` names:
 
 ```json
 {
+  "dmp": "projects/glider/template/dmp_glider_template.json",
+  "standards": ["rda_dcs", "ostrails"],
+  "rules_versions": {"rda_dcs": "1.0.0", "ostrails": "1.0.0"},
   "verdict": "pass",
-  "summary": {"total": 100, "pass": 66, "fail": 0, "warning": 1, "missing": 33},
-  "rules": [{"rda_dcs": "1.0.0"}, {"ostrails": "1.0.0"}],
   "engine": "1.0.0",
-  "warnings": [{"instance_path": "...", "message": "..."}]
+  "summary": {"total": 106, "pass": 76, "fail": 0, "warning": 0, "missing": 30},
+  "pass": [{"category": "presence", "instance_path": "...", "message": "..."}],
+  "fail": [],
+  "warning": [],
+  "missing": []
 }
 ```
 
@@ -93,10 +98,11 @@ A document is judged by the versions **it** names, so a project whose pins moved
 since does not change the answer, and a DMP committed a year ago reads as
 checked against the rules it was written against.
 
-The passing results are not kept, they say only that a field is a field. The
-warnings are, being the whole of what a document that passed still has to say.
-`engine` is the version of madmp-core that ran. There is no timestamp, git dates
-the commit, and one here would change the file at every submission.
+Every result is kept, split into the four statuses rather than handed over flat,
+so that a reader shows them by severity without filtering anything and the
+length of each list equals its own count in `summary`. `engine` is the version
+of madmp-core that ran. There is no timestamp, git dates the commit, and one
+here would change the file at every submission of an unchanged document.
 
 **What is here has passed.** A DMP that does not hold up is refused at
 submission time and never reaches this repository, which is what makes the
